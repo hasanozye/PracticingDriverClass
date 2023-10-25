@@ -25,6 +25,12 @@ public class PropertyReader {
 
     }
 
+    /**
+     * This is a static factory method that creates a PropertyReader object with a default file name ("config.properties").
+     * It provides a convenient way to create a PropertyReader without specifying a file name each time.
+     * @return
+     */
+
     public static PropertyReader read() {
         return read("config");
     }
