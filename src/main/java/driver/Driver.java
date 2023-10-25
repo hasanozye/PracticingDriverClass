@@ -11,11 +11,10 @@ public class Driver {
     private static ThreadLocal<WebDriverWait> waits = new ThreadLocal<>();
 
     public static WebDriver getDriver() {
-        return getDriver();
+        return getDriver(Browsers.CHROME);
     }
 
     public static WebDriver getDriver(Browsers browser) {
-
         if (drivers.get() == null) {
             switch (browser) {
                 case IE -> {
