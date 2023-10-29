@@ -79,5 +79,9 @@ public class BaseSteps {
         });
     }
 
+    public void waitForVisibility(WebElement element) {
+        wait.until(ExpectedConditions.visibilityOf(element));
+    }
+
 
 }
