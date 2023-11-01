@@ -13,13 +13,12 @@ import org.openqa.selenium.ie.InternetExplorerOptions;
 import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.safari.SafariOptions;
 import readers.property.PropertyReader;
-import static readers.property.PropertyReader.*;
 
 public class DriverFactory {
 
     public static WebDriver createChrome() {
         ChromeOptions options = new ChromeOptions();
-        PropertyReader pr = read();
+        PropertyReader pr = PropertyReader.read();
         for (String s : pr.get("chrome.options").split(",")) {
             options.addArguments(s.trim());
         }
