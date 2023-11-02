@@ -3,6 +3,8 @@ package driver;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
+
 import static driver.DriverFactory.*;
 
 public class Driver {
@@ -35,7 +37,19 @@ public class Driver {
             }
 
         }
+        waits.set(new WebDriverWait(drivers.get(), Duration.ofSeconds(10)));
         return drivers.get();
+    }
+
+    public static WebDriverWait getWait() {
+        return waits.get();
+    }
+
+    public static void quitDriver() {
+        if (drivers.get() != null) {
+            drivers.get().quit();
+            drivers.set(null);
+        }
     }
 
 }
