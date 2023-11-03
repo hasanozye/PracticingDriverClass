@@ -50,12 +50,12 @@ public class BaseSteps {
         });
     }
 
-    public void sendKeys(By locator, String text) {
+    public void sendKeys(By locator, CharSequence... text) {
         WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(locator));
         sendKeys(element, text);
     }
 
-    public void sendKeys(WebElement element, String text) {
+    public void sendKeys(WebElement element, CharSequence... text) {
         wait.until(webDriver -> {
             try {
                 element.clear();
