@@ -29,7 +29,8 @@ Feature: login functionality
   Scenario: user searches for product
     When user search "mac"
     Then product count should be 4
-@MapsList
+
+  @MapsList
   Scenario: Statuses with login attempts
     When user tries to login with list of maps
       | username          | password   | status |
