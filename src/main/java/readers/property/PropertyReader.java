@@ -33,10 +33,9 @@ public class PropertyReader {
      */
     public PropertyReader(String fileName) {
         try {
-            this.file = "src/main/resources/" + fileName + ".properties";
+            this.file = "src/test/resources/datafiles/" + fileName + ".properties";
             FileReader fileReader = new FileReader(file);
             properties.load(fileReader);
-
         } catch (Exception e) {
             throw new RuntimeException();
         }
